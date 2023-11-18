@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaama Music player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/play.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1>Ga<span>A</span>ma</h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Specification</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Connects</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col1">
+          <h1>THE <br />REAL<br />Sound</h1>
+        </div>
+        <div class="col2">
+          <h2>Click here to listen</h2>
+          <img src="images/play.png" id="play" />
+        </div>
+      </div>
+    </div>
+    <audio id="song">
+      <source src="Audio/audio.mp3" type="audio/mp3" />
+    </audio>
+    <script>
+      var song = document.getElementById("song");
+      var play = document.getElementById("play");
+      play.onclick = function () {
+        if (song.paused) {
+          song.play();
+          play.src = "images/pause.png";
+        } else {
+          song.pause();
+          play.src = "images/play.png";
+        }
+      };
+    </script>
+  </body>
+</html>
